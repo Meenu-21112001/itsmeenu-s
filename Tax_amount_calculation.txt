@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Income_Tax
+{
+    public static void main(String[] args) 
+    {
+        int monthly_salary ,annual_salary,tax_amount,hra=0,da=0,ta=0;
+        //*hra is HOUSE RENT ALLOWANCE,ta is TRAVEL ALLOWANCE,da is DEARNESS ALLOWANCE*//
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Your Montly Income Here:");
+        monthly_salary=sc.nextInt();
+        annual_salary=monthly_salary*12+hra+da+ta;
+        System.out.println("Your annual_salary is:"+annual_salary);
+        hra=((20*monthly_salary)/100);
+        da=((40*monthly_salary+hra)/100);
+        ta=((10*monthly_salary)/100);
+        
+if(annual_salary<=500000)
+  {
+       System.out.println("\n");
+      System.out.println("\nYour income is less than or equal to 5L so need to pay TAX");
+  }
+else
+  if(annual_salary>500000&&annual_salary<1000000)
+  {
+      tax_amount=((20*annual_salary)/100);
+       System.out.println("\n");
+      System.out.println("\n\tYour tax amount is about 10% of your annual salary"+tax_amount);
+  }
+  else
+  if(annual_salary>=1000000&&annual_salary<=2000000)
+  {
+    tax_amount=((20*annual_salary)/100);
+      System.out.println("\nYour tax amount is about 20% of your annual salary");  
+  }
+  else 
+  if(annual_salary>2000000)
+  {
+    tax_amount=((30*annual_salary)/100);
+     System.out.println("\n");
+      System.out.println("\nYour tax amount is about 30% of your annual salary");
+      System.out.println("You have to pay tax amount of $"+tax_amount);
+  }
+  else
+  {
+       System.out.println("\n");
+      System.out.println("\n Enter valid credentials");
+  }
+}
+}
